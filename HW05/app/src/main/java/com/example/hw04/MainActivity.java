@@ -4,11 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.hw04.Adapter.UserAdapter;
 import com.example.hw04.Data.User;
@@ -27,8 +29,28 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         AddControls();
-        LoadDataListView();
-        AddEvents();
+        //LoadDataListView();
+        //AddEvents();
+    }
+
+    //@Override
+    public void onMsgFromFragToMain(String sender, String strValue){
+        // show message arriving to MainActivity
+         Toast.makeText(getApplication(), "MAIN GOT>> " + sender + "\n"+ strValue, Toast.LENGTH_LONG).show();
+        if(sender.equals("RED-FRAG")) {
+            /* TODO: if needed, do here something on behalf of the RED fragment*/
+        }
+
+        if(sender.equals("BLUE-FRAG"))
+        {
+            try
+            {
+                //redFragment.onMsgFromMainToFragment("\nSender: "+ sender + "\nMsg: + strValue)
+            }catch (Exception  ex)
+            {
+                Log.e("ERROR", "onStrFromFragToMain "+ ex.getMessage());
+            }
+        }
     }
 
     private void AddControls()

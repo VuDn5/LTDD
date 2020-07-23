@@ -1,5 +1,6 @@
 package com.example.hw04;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -28,8 +29,6 @@ import java.util.ArrayList;
  */
 public class blueFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -37,11 +36,17 @@ public class blueFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    MainActivity main;
+    Context context= null;
+    String message = "";
+
     TextView tvYourChoose;
     ListView lv_item;
 
     ArrayList<User> listUser;
     UserAdapter userAdapter = null;
+
+
 
     public blueFragment() {
         // Required empty public constructor
@@ -65,28 +70,6 @@ public class blueFragment extends Fragment {
         return fragment;
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        FrameLayout view_layout_blue = (FrameLayout) inflater.inflate(R.layout.fragment_blue, null);
-        tvYourChoose = view_layout_blue.findViewById(R.id.tvYourChoose);
-        lv_item = view_layout_blue.findViewById(R.id.list_item);
-
-        AddEvents();
-        LoadDataListView();
-        return inflater.inflate(R.layout.fragment_blue, container, false);
-    }
-
     public static blueFragment newInstance(String strArg) {
         blueFragment fragment = new blueFragment();
         Bundle args = new Bundle();
@@ -95,10 +78,38 @@ public class blueFragment extends Fragment {
         return fragment;
     }
 
-    private void AddControls()
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+        }
+        try {
+            context = getActivity(); // use this reference to invoke main callbacks
+            main = (MainActivity) getActivity();
+        }
+        catch (IllegalStateException e)
+        {
+            throw new IllegalStateException("MainActivitymust implement callbacks");
+        }
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        //LinearLayout view_layout_blue = (LinearLayout) inflater.inflate(R.layout.fragment_blue, null);
+        return  inflater.inflate(R.layout.fragment_blue, container, false);
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState)
     {
-        tvYourChoose = getView().findViewById(R.id.tvYourChoose);
-        lv_item = getView().findViewById(R.id.list_item);
+        tvYourChoose = view.findViewById(R.id.tvYourChoose);
+        lv_item = view.findViewById(R.id.list_item);
+        LoadDataListView();
+        AddEvents();
     }
 
     private void AddEvents()
@@ -109,7 +120,6 @@ public class blueFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //BanTin item = dsBanTin.get(position);
                 User item = listUser.get(position);
-
                 tvYourChoose.setText("Your Choose: " + item.getName());
             }
         });
@@ -118,11 +128,12 @@ public class blueFragment extends Fragment {
     private void LoadDataListView()
     {
         //get data userAdapter
-       listUser = new ArrayList<User>();
+        listUser = new ArrayList<User>();
         listUser = CreateData();
 
-        userAdapter = new UserAdapter(getActivity(), R.layout.item, listUser);
+        userAdapter = new UserAdapter(context, R.layout.item, listUser);
         lv_item.setAdapter(userAdapter);
+
     }
 
     public ArrayList<User> CreateData() {
