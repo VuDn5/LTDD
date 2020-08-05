@@ -53,41 +53,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private class MyTask extends AsyncTask<Integer, Integer, String> {
-        private final int LIMIT = 10000000;
-
         @Override
         protected String doInBackground(Integer... params) {
-            int valuePercen = 0;
+            double valuePercen = 0;
             int valueInput = params[0];
+            double value = (float) 1 / valueInput * 100;
 
-            if(valueInput != 0) {
-//                double value = (float) 1 / valueInput * 100;
-//
-//                for (int i = 1; i <= valueInput; i++) {
-//                    try {
-//                        Thread.sleep(0);
-//                        valuePercen = valuePercen + value;
-//                        if (valuePercen >= 1) {
-//                            publishProgress((int) valuePercen);
-//                        }
-//                    } catch (InterruptedException e) {
-//                        e.printStackTrace();
-//                    }
-//                }
-
-                //double value = (float) 1 / valueInput * 100;
-
-                double wannaSleep = 1 - valueInput * 1.0 / LIMIT;
-                wannaSleep = (1 + wannaSleep) * 30;
-                for(int i = 0; i <= 100; i++){
-                    try{
-                        Thread.sleep((long)wannaSleep);
-                        publishProgress(i);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
+            for (int i = 1; i <= valueInput; i++) {
+                try {
+                    Thread.sleep(0);
+                    valuePercen = valuePercen + value;
+                    if (valuePercen >= 1) {
+                        publishProgress((int) valuePercen);
                     }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
             }
+            publishProgress(100);
             return "Task Completed.";
         }
 

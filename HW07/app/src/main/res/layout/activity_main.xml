@@ -13,8 +13,7 @@
         android:id="@+id/edtText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="number"
-        android:maxLength="7"/>
+        android:inputType="number" />
 
     <LinearLayout
         android:layout_width="match_parent"
