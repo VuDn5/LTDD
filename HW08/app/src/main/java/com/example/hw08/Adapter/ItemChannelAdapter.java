@@ -28,7 +28,7 @@ public class ItemChannelAdapter extends ArrayAdapter<ItemChannel> {
         super(context, resource, items);
 
         receiptlist = items;
-        Collections.reverse(receiptlist);
+        //Collections.reverse(receiptlist);
     }
 
     @Override

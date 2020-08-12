@@ -4,6 +4,7 @@ public class ItemChannel {
     private String Name;
     private String Key;
     private String Link;
+    private String Description;
 
     public String getLink() {
         return Link;
@@ -28,6 +29,8 @@ public class ItemChannel {
         Link = "";
     }
 
+
+
     public String getName() {
         return Name;
     }
@@ -42,5 +45,13 @@ public class ItemChannel {
 
     public void setKey(String key) {
         Key = key;
+    }
+
+    public String getDescription() {
+        return Description;
+    }
+
+    public void setDescription(String description) {
+        Description = description;
     }
 }
