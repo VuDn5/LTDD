@@ -102,7 +102,7 @@ public class DownloadRssFeed extends AsyncTask<String, Void, ArrayList<ItemChann
         Element link = (Element) entry.getElementsByTagName("link").item(0);
 
         String titleValue = title.getTextContent();
-        String descriptionValue = description.getFirstChild().getNodeValue();
+        String descriptionValue = description.getTextContent();
         String linkValue = link.getTextContent();
 
         ItemChannel item = new ItemChannel(titleValue, "detail", linkValue);

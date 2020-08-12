@@ -28,12 +28,12 @@
                     android:orientation="horizontal">
 
                     <Button
-                        android:id="@+id/btnThanhNien"
+                        android:id="@+id/btnVietNamNet"
                         android:layout_width="wrap_content"
                         android:layout_height="200dp"
                         android:layout_weight="1"
                         android:padding="5dp"
-                        android:text="THANH NIÊN" />
+                        android:text="VietNamNet" />
 
                     <Button
                         android:id="@+id/btnVNExpress"
@@ -55,12 +55,13 @@
                         android:layout_weight="1"
                         android:padding="5dp"
                         android:text="TUỔI TRẺ" />
+
                     <Button
-                        android:id="@+id/btnVietNamNet"
+                        android:id="@+id/btnThanhNien"
                         android:layout_width="wrap_content"
                         android:layout_height="200dp"
                         android:layout_weight="1"
-                        android:text="VietNamNet" />
+                        android:text="THANH NIÊN" />
                 </LinearLayout>
 
             </LinearLayout>

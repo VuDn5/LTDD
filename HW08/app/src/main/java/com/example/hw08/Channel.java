@@ -218,8 +218,7 @@ public class Channel extends AppCompatActivity {
 
         final Uri storyLink = Uri.parse(itemChannel.getLink());
         String title = itemChannel.getName();
-        String description = itemChannel.getDescription();
-        String ss = Html.fromHtml(description, Html.FROM_HTML_MODE_COMPACT).toString();
+        String description = itemChannel.getDescription().trim();
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(NameChannel)
                 .setMessage(title + "\n\n" + Html.fromHtml(description) + "\n")

@@ -37,8 +37,7 @@ public class MainActivity extends AppCompatActivity {
         btnThanhNien.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Code btnThanhNien
-                //Here************
+                //Call Channel
                 CallChannel("TN", "Thanh niên");//ThanhNien
             }
         });
@@ -46,8 +45,7 @@ public class MainActivity extends AppCompatActivity {
         btnVNExpress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Code btnVNExpress
-                //Here************
+                //Call Channel
                 CallChannel("VNE", "VnExpress");//VNExpress
             }
         });
@@ -75,8 +73,6 @@ public class MainActivity extends AppCompatActivity {
         myData.putString(NameChannel, name);
         myData.putBoolean(IsChannel, true);
         intent.putExtras(myData);
-//        intent.putExtra(KeyChannel, key);
-//        intent.putExtra(IsChannel, true );
         startActivity(intent);
     }
 
