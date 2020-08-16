@@ -68,18 +68,15 @@ public class MainActivity extends AppCompatActivity {
     public ArrayList<User> CreateData() {
         ArrayList<User> ds = new ArrayList<User>();
 
-        User user1 = new User("Nguyễn Văn A", "01234567890");
-        User user2 = new User("Lê Thị B", "0334444512");
-        User user3 = new User("Trần Văn C", "04743917424");
-        User user4 = new User("Phan Văn D", "033513523");
-        User user5 = new User("Đinh E", "0988885231");
+        User user1 = new User("THE THEO", "tn_TheTheo");
+        User user2 = new User("THE DUC", "tn_TheDuc");
+        User user3 = new User("KINH TE", "tn_KinhThe");
+        User user4 = new User("PHAP LUAP", "tn_PhapLuat");
 
         ds.add(user1);
         ds.add(user2);
         ds.add(user3);
         ds.add(user4);
-        ds.add(user5);
-
         return ds;
     }
 
