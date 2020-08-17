@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,8 +14,10 @@
 
 
         <TabHost
+            android:id="@+id/tabHome"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginTop="100dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -33,18 +35,18 @@
                     android:layout_height="match_parent">
 
                     <LinearLayout
-                        android:id="@+id/tab1"
+                        android:id="@+id/Call"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical">
 
                         <EditText
-                            android:id="@+id/password_field"
+                            android:id="@+id/txtNumberCall"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="8dp"
                             android:background="#eeeeee"
-                            android:enabled="false"
+                            android:enabled="true"
                             android:minHeight="48dp"
                             android:paddingLeft="8dp"
                             android:paddingRight="8dp"
@@ -60,14 +62,12 @@
                             android:orientation="vertical"
                             android:showDividers="beginning|middle|end">
 
-                            <TableRow style="@style/keyboard_row"
-                                >
+                            <TableRow style="@style/keyboard_row">
 
                                 <Button
                                     android:id="@+id/t9_key_1"
                                     style="@style/keyboard_number_button"
-                                    android:text="@string/number_one"
-                                   />
+                                    android:text="@string/number_one" />
 
                                 <Button
                                     android:id="@+id/t9_key_2"
@@ -80,8 +80,7 @@
                                     android:text="@string/number_three" />
                             </TableRow>
 
-                            <TableRow style="@style/keyboard_row"
-                                >
+                            <TableRow style="@style/keyboard_row">
 
                                 <Button
                                     android:id="@+id/t9_key_4"
@@ -99,8 +98,7 @@
                                     android:text="@string/number_six" />
                             </TableRow>
 
-                            <TableRow style="@style/keyboard_row"
-                                >
+                            <TableRow style="@style/keyboard_row">
 
                                 <Button
                                     android:id="@+id/t9_key_7"
@@ -118,8 +116,7 @@
                                     android:text="@string/number_nine" />
                             </TableRow>
 
-                            <TableRow style="@style/keyboard_row"
-                                >
+                            <TableRow style="@style/keyboard_row">
 
                                 <Button
                                     android:id="@+id/t9_key_clear"
@@ -149,11 +146,15 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/tab2"
+                        android:id="@+id/DanhBa"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical">
 
+                        <ListView
+                            android:id="@+id/lvItem"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
                     </LinearLayout>
 
 
@@ -162,4 +163,4 @@
         </TabHost>
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
