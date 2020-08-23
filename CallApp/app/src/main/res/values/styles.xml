@@ -34,4 +34,14 @@
         <item name="android:layout_margin">1dp</item>
     </style>
 
+    <style name="textMedium">
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="textRegular">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+
 </resources>
