@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".MainActivity">
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,10 +14,8 @@
 
 
         <TabHost
-            android:id="@+id/tabHome"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="100dp">
+            android:layout_height="match_parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -35,126 +33,20 @@
                     android:layout_height="match_parent">
 
                     <LinearLayout
-                        android:id="@+id/Call"
+                        android:id="@+id/tab1"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical">
 
-                        <EditText
-                            android:id="@+id/txtNumberCall"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:background="#eeeeee"
-                            android:enabled="true"
-                            android:minHeight="48dp"
-                            android:paddingLeft="8dp"
-                            android:paddingRight="8dp"
-                            android:singleLine="true"
-                            android:textAppearance="?android:attr/textAppearanceMedium" />
-
-                        <TableLayout
-                            android:id="@+id/keyboard"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@android:color/white"
-                            android:divider="@drawable/keyboard_divider"
-                            android:orientation="vertical"
-                            android:showDividers="beginning|middle|end">
-
-                            <TableRow style="@style/keyboard_row">
-
-                                <Button
-                                    android:id="@+id/t9_key_1"
-                                    style="@style/keyboard_number_button"
-                                    android:text="@string/number_one" />
-
-                                <Button
-                                    android:id="@+id/t9_key_2"
-                                    style="@style/keyboard_number_button"
-                                    android:text="@string/number_two" />
-
-                                <Button
-                                    android:id="@+id/t9_key_3"
-                                    style="@style/keyboard_number_button"
-                                    android:text="@string/number_three" />
-                            </TableRow>
-
-                            <TableRow style="@style/keyboard_row">
-
-                                <Button
-                                    android:id="@+id/t9_key_4"
-                                    style="@style/keyboard_number_button"
-                                    android:text="@string/number_four" />
-
-                                <Button
-                                    android:id="@+id/t9_key_5"
-                                    style="@style/keyboard_number_button"
-                                    android:text="@string/number_five" />
-
-                                <Button
-                                    android:id="@+id/t9_key_6"
-                                    style="@style/keyboard_number_button"
-                                    android:text="@string/number_six" />
-                            </TableRow>
-
-                            <TableRow style="@style/keyboard_row">
-
-                                <Button
-                                    android:id="@+id/t9_key_7"
-                                    style="@style/keyboard_number_button"
-                                    android:text="@string/number_seven" />
-
-                                <Button
-                                    android:id="@+id/t9_key_8"
-                                    style="@style/keyboard_number_button"
-                                    android:text="@string/number_eight" />
-
-                                <Button
-                                    android:id="@+id/t9_key_9"
-                                    style="@style/keyboard_number_button"
-                                    android:text="@string/number_nine" />
-                            </TableRow>
-
-                            <TableRow style="@style/keyboard_row">
-
-                                <Button
-                                    android:id="@+id/t9_key_clear"
-                                    style="@style/keyboard_button"
-                                    android:text="@string/btn_clear"
-                                    android:textAppearance="?android:attr/textAppearanceMedium" />
-
-                                <Button
-                                    android:id="@+id/t9_key_0"
-                                    style="@style/keyboard_number_button"
-                                    android:text="@string/number_zero" />
-
-                                <Button
-                                    android:id="@+id/t9_key_backspace"
-                                    style="@style/keyboard_button"
-                                    android:text="@string/btn_backspace"
-                                    android:textAppearance="?android:attr/textAppearanceMedium" />
-                            </TableRow>
-                        </TableLayout>
-
-                        <Button
-                            android:id="@+id/btnCall"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="CALL" />
 
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/DanhBa"
+                        android:id="@+id/tab2"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical">
 
-                        <ListView
-                            android:id="@+id/lvItem"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
                     </LinearLayout>
 
 
@@ -163,4 +55,4 @@
         </TabHost>
     </LinearLayout>
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
