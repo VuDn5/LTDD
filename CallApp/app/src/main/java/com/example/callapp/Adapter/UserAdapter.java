@@ -1,6 +1,9 @@
 package com.example.callapp.Adapter;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +23,8 @@ import java.util.List;
 public class UserAdapter extends ArrayAdapter<User> {
     public List<User> receiptlist;
 
+    Context mcontext= null;
+
     public UserAdapter(Context context, int textViewResourceId) {
         super(context, textViewResourceId);
     }
@@ -28,6 +33,7 @@ public class UserAdapter extends ArrayAdapter<User> {
         super(context, resource, items);
 
         receiptlist = items;
+        mcontext = context;
         Collections.reverse(receiptlist);
     }
 
@@ -57,7 +63,7 @@ public class UserAdapter extends ArrayAdapter<User> {
             vi = LayoutInflater.from(getContext());
             v = vi.inflate(R.layout.item, null);
         }
-        User p = getItem(position);
+        final User p = getItem(position);
 
         if (p != null) {
             InputStream is = null;
@@ -69,8 +75,30 @@ public class UserAdapter extends ArrayAdapter<User> {
 
             tvName.setText(p.getName());
             tvPhone.setText(p.getPhone());
+
+            btnCall.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    ShowCall(p);
+                }
+            });
         }
         return v;
+    }
+
+    private void ShowCall(User p)
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(mcontext);
+        builder.setMessage(p.getPhone())
+                .setTitle("Calling");
+        builder.setNegativeButton("Close", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                // User cancelled the dialog
+            }
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
 }

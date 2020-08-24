@@ -1,6 +1,8 @@
 package com.example.callapp.fragment;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -83,7 +85,15 @@ public class QuaySo extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
-
+        try
+        {
+            context = getActivity(); // use this reference to invoke main callbacks
+            main = (MainActivity) getActivity();
+        }
+        catch (IllegalStateException e)
+        {
+            throw new IllegalStateException("MainActivity must implement callbacks");
+        }
     }
 
     @Override
@@ -151,6 +161,13 @@ public class QuaySo extends Fragment {
                     txtNumberCall.setText(numberCall.subSequence(0, numberCall.length() - 1));
             }
         });
+
+        btnCall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ShowCall();
+            }
+        });
     }
 
     private void SetEnventKey(final Button t9_key, final String num)
@@ -162,6 +179,21 @@ public class QuaySo extends Fragment {
 
             }
         });
+    }
+
+    private void ShowCall()
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage(txtNumberCall.getText())
+                .setTitle("Calling");
+        builder.setNegativeButton("Close", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                // User cancelled the dialog
+            }
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
 }
