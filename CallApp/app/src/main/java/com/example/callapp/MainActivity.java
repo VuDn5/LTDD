@@ -12,9 +12,21 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+<<<<<<< HEAD
 import com.example.callapp.Adapter.PageAdapter;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
+=======
+import com.example.callapp.adapter.PageAdapter;
+import com.google.android.material.tabs.TabItem;
+import com.google.android.material.tabs.TabLayout;
+
+public class MainActivity extends AppCompatActivity {
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+    private TabItem tab1, tab2;
+    public PageAdapter pagerAdapter;
+>>>>>>> e945b080d3edc40648672fec64e3dc92bc543f21
 
 public class MainActivity extends AppCompatActivity {
     private TabLayout tabLayout;
@@ -59,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
             }
+<<<<<<< HEAD
 
 
         });
@@ -66,6 +79,11 @@ public class MainActivity extends AppCompatActivity {
         viewPager.addOnPageChangeListener( new TabLayout.TabLayoutOnPageChangeListener(tabLayout) );
 
 
+=======
+        });
+
+        viewPager.addOnPageChangeListener( new TabLayout.TabLayoutOnPageChangeListener(tabLayout) );
+>>>>>>> e945b080d3edc40648672fec64e3dc92bc543f21
     }
 
 }

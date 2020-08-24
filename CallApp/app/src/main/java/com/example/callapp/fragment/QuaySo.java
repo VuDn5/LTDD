@@ -1,8 +1,11 @@
 package com.example.callapp.fragment;
 
+<<<<<<< HEAD
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+=======
+>>>>>>> e945b080d3edc40648672fec64e3dc92bc543f21
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+<<<<<<< HEAD
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,6 +21,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.callapp.MainActivity;
+=======
+
+>>>>>>> e945b080d3edc40648672fec64e3dc92bc543f21
 import com.example.callapp.R;
 
 /**
@@ -35,6 +42,7 @@ public class QuaySo extends Fragment {
     private String mParam1;
     private String mParam2;
 
+<<<<<<< HEAD
     MainActivity main;
     Context context= null;
     String message = "";
@@ -55,6 +63,8 @@ public class QuaySo extends Fragment {
     Button t9_key_8;
     Button t9_key_9;
 
+=======
+>>>>>>> e945b080d3edc40648672fec64e3dc92bc543f21
     public QuaySo() {
         // Required empty public constructor
     }
@@ -84,6 +94,7 @@ public class QuaySo extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+<<<<<<< HEAD
 
         try
         {
@@ -94,6 +105,8 @@ public class QuaySo extends Fragment {
         {
             throw new IllegalStateException("MainActivity must implement callbacks");
         }
+=======
+>>>>>>> e945b080d3edc40648672fec64e3dc92bc543f21
     }
 
     @Override
@@ -102,6 +115,7 @@ public class QuaySo extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_quay_so, container, false);
     }
+<<<<<<< HEAD
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState)
@@ -196,4 +210,6 @@ public class QuaySo extends Fragment {
         dialog.show();
     }
 
+=======
+>>>>>>> e945b080d3edc40648672fec64e3dc92bc543f21
 }
