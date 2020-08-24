@@ -6,8 +6,6 @@
     tools:context=".fragment.CuocGoi">
 
     <!-- TODO: Update blank fragment layout -->
-<<<<<<< HEAD
-
 
     <ScrollView
         android:layout_width="match_parent"
@@ -26,12 +24,5 @@
             </ListView>
         </LinearLayout>
     </ScrollView>
-
-=======
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
->>>>>>> e945b080d3edc40648672fec64e3dc92bc543f21
 
 </FrameLayout>

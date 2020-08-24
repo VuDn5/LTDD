@@ -13,11 +13,7 @@
         android:orientation="vertical">
 
         <EditText
-<<<<<<< HEAD
             android:id="@+id/txtNumberCall"
-=======
-            android:id="@+id/password_field"
->>>>>>> e945b080d3edc40648672fec64e3dc92bc543f21
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -27,12 +23,8 @@
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
             android:singleLine="true"
-<<<<<<< HEAD
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@android:color/black" />
-=======
-            android:textAppearance="?android:attr/textAppearanceMedium" />
->>>>>>> e945b080d3edc40648672fec64e3dc92bc543f21
 
         <TableLayout
             android:id="@+id/keyboard"
